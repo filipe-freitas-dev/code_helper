@@ -1,0 +1,2152 @@
+Wazuh central components - Upgrade guide Â· Wazuh documentation
+Blog
+Community
+Contact us
+X
+LinkedIn
+Reddit
+GitHub
+Discord
+Slack
+Mailing list
+Search here
+Close
+Search
+Wazuh
+Platform
+Overview
+XDR
+SIEM
+Cloud
+CTI
+Documentation
+Services
+Professional support
+Consulting services
+Training courses
+Partners
+Become a partner
+Find a partner
+Company
+Customers
+About us
+Our team
+Resources
+Contact us
+Search term
+Search now!
+Getting started
+Components
+Wazuh indexer
+Wazuh server
+Wazuh dashboard
+Wazuh agent
+Architecture
+Use cases
+Configuration assessment
+Malware detection
+File integrity monitoring
+Threat hunting
+Log data analysis
+Vulnerability detection
+Incident response
+Regulatory compliance
+IT hygiene
+Container security
+Posture management
+Cloud workload protection
+Quickstart
+Installation guide
+Wazuh indexer
+Assisted installation
+Step-by-step installation
+Wazuh server
+Assisted installation
+Step-by-step installation
+Wazuh dashboard
+Assisted installation
+Step-by-step installation
+Wazuh agent
+Linux
+Windows
+macOS
+Solaris
+AIX
+HP-UX
+Packages list
+Uninstalling Wazuh
+Uninstalling the Wazuh central components
+Uninstalling the Wazuh agent
+Installation alternatives
+Virtual Machine (OVA)
+Amazon Machine Images (AMI)
+Deployment on Docker
+Wazuh Docker deployment
+Changing the default password of Wazuh users
+Building Docker images locally
+Wazuh Docker utilities
+Upgrading Wazuh Docker
+Uninstalling the Wazuh Docker deployment
+Deployment on Kubernetes
+Kubernetes configuration
+Deployment
+Upgrade Wazuh installed in Kubernetes
+Clean Up
+Offline installation guide
+Install Wazuh components using the assisted method
+Install Wazuh components step by step
+Installation from sources
+Installing the Wazuh manager from sources
+Installing the Wazuh agent from sources
+Deployment with Ansible
+Installation Guide
+Install Ansible
+Install Wazuh indexer and dashboard
+Install Wazuh manager
+Install a Wazuh cluster
+Install Wazuh Agent
+Remote endpoints connection
+Roles
+Wazuh indexer
+Wazuh dashboard
+Filebeat
+Wazuh Manager
+Wazuh Agent
+Variables references
+Deployment with Puppet
+Set up Puppet
+Installing Puppet master
+Installing Puppet agent
+Setting up Puppet certificates
+Wazuh Puppet module
+Wazuh manager class
+Wazuh agent class
+User manual
+Wazuh server
+Wazuh manager
+Indexer integration
+Alert management
+Event logging
+External API integration
+Queuing mechanisms
+Wazuh server cluster
+Architecture overview
+Types of nodes in a Wazuh server cluster
+How the Wazuh server cluster works
+Wazuh cluster nodes configuration
+Data synchronization
+Certificates deployment
+Adding new Wazuh server nodes
+Certificates creation
+Configuring existing components to connect with the new node
+Wazuh server node(s) installation
+Testing the cluster
+Agent connections
+Load balancers
+Wazuh server API
+Getting started
+Configuration
+Securing the Wazuh server API
+Role-Based Access Control
+How it works
+Authorization Context
+RBAC Reference
+Filtering data using Wazuh Query Language (WQL)
+Use cases
+Reference
+Wazuh indexer
+Wazuh indexer indices
+Re-indexing
+Wazuh indexer tuning
+Migrating Wazuh indices
+Wazuh indexer configuration on hardened endpoints
+Wazuh indexer cluster
+Certificates deployment
+Adding Wazuh indexer nodes
+Wazuh indexer cluster tuning
+Index lifecycle management
+Cluster management
+Wazuh indexer API
+Getting started
+Configuration
+Securing the Wazuh indexer API
+Use cases
+Reference
+Wazuh dashboard
+Navigating the Wazuh dashboard
+Creating custom dashboards
+Filtering data using Wazuh Query Language (WQL)
+Enabling multi-tenancy
+Configuring third-party SSL certificates
+Configuring SSL certificates on the Wazuh dashboard using Letâs Encrypt
+Configuring SSL certificates on the Wazuh dashboard using NGINX
+Setting up custom branding
+Wazuh dashboard settings
+Troubleshooting
+Certificates deployment
+Wazuh agent
+Wazuh agent enrollment
+Requirements
+Wazuh agent life cycle
+Enrollment methods
+Enrollment via agent configuration
+Linux/Unix
+Windows
+macOS
+Enrollment via Wazuh server API
+Requesting the client key
+Importing the client key to the Wazuh agent
+Additional security options
+Using password authentication
+Wazuh manager identity verification
+Wazuh agent identity verification
+Deployment variables
+Linux
+Windows
+macOS
+AIX
+Troubleshooting
+Wazuh agent management
+Wazuh agent connection
+Wazuh agent administration
+Querying the Wazuh agent configuration
+Grouping agents
+Listing agents
+Listing agents using the CLI
+Listing agents using the Wazuh server API
+Listing agents using the Wazuh dashboard
+Anti-tampering
+Removing agents
+Remove agents using the CLI
+Remove agents using the Wazuh server API
+Remote upgrading
+Upgrading the Wazuh agent
+Wazuh signed package (WPK) files
+Agent upgrade module - How it works
+Wazuh agent queue
+Agent labels
+Agent key request
+Data analysis
+Decoders
+JSON decoder
+Dynamic fields
+Sibling Decoders
+Custom decoders
+Rules
+Default rules
+Custom rules
+Rules classification
+Ruleset XML syntax
+Decoders Syntax
+Rules Syntax
+Regular Expression Syntax
+Perl-compatible Regular Expressions
+Testing decoders and rules
+Using CDB lists
+MITRE ATT&CK framework
+User administration
+Password management
+Wazuh RBAC - How to create and map internal users
+Single sign-on
+Setup single sign-on with administrator role
+Okta
+Microsoft Entra ID
+PingOne
+Google
+Jumpcloud
+OneLogin
+Keycloak
+Setup single sign-on with read-only role
+Okta
+Microsoft Entra ID
+PingOne
+Google
+Jumpcloud
+OneLogin
+Keycloak
+LDAP integration
+Capabilities
+File integrity monitoring
+How it works
+How to configure the FIM module
+Interpreting the FIM module analysis
+Basic settings
+Creating custom FIM rules
+Advanced settings
+Use cases
+Detecting malware persistence technique
+Detecting account manipulation
+Monitoring files at specific intervals
+Reporting file changes
+Monitoring configuration changes
+Windows Registry monitoring
+Malware detection
+File integrity monitoring and threat detection rules
+Rootkits behavior detection
+CDB lists and threat intelligence
+VirusTotal integration
+File integrity monitoring and YARA
+ClamAV logs collection
+Windows Defender logs collection
+Custom rules to detect malware IOC
+Security Configuration Assessment
+How SCA works
+How to configure SCA
+Available SCA policies
+Creating custom SCA policies
+Use cases
+Active Response
+How to configure Active Response
+Default active response scripts
+Custom active response scripts
+Use cases
+Blocking SSH brute-force attack with Active Response
+Restarting the Wazuh agent with Active Response
+Disabling a Linux user account with Active Response
+Additional information
+Log data collection
+How it works
+Configuration for monitoring log files
+Configuring syslog on the Wazuh server
+Journald log collection
+Using multiple socket outputs
+Configuring log collection for different operating systems
+Log data analysis
+Use cases
+Vulnerability detection
+How it works
+Configuration
+Troubleshooting
+Frequently Asked Questions (FAQs)
+Known issues
+Command monitoring
+How it works
+Configuration
+Command output analysis
+Use cases
+Monitoring running processes
+Disk space utilization
+Check if the output changed
+Detect USB Storage
+Load average
+Container security
+Using Wazuh to monitor Docker
+Use cases
+System inventory
+How it works
+Configuration
+Viewing system inventory data
+Generating system inventory reports
+Available inventory fields
+Compatibility matrix
+Using Syscollector information to trigger alerts
+Osquery
+Monitoring system calls
+How it works
+Configuration
+Use cases
+Monitoring file and directory access
+Monitoring commands run as root
+Privilege abuse
+Agentless monitoring
+How it works
+Connection
+Configuration
+Visualization
+Use cases
+Reference
+Local configuration (ossec.conf)
+active-response
+agentless
+agent-upgrade
+alerts
+anti_tampering
+auth
+client
+client_buffer
+cluster
+command
+database_output
+email_alerts
+global
+github
+indexer
+integration
+labels
+localfile
+logging
+ms-graph
+office365
+remote
+reports
+rootcheck
+sca
+rule_test
+ruleset
+socket
+syscheck
+syslog_output
+task-manager
+fluent-forward
+gcp-pubsub
+gcp-bucket
+vulnerability-detection
+wodle name="command"
+wodle name="aws-s3"
+wodle name="syscollector"
+wazuh-db
+wodle name="osquery"
+wodle name="docker-listener"
+wodle name="azure-logs"
+wodle name="agent-key-polling"
+Verifying configuration
+Centralized configuration (agent.conf)
+Internal configuration
+Daemons
+wazuh-agentd
+wazuh-agentlessd
+wazuh-analysisd
+wazuh-authd
+wazuh-csyslogd
+wazuh-dbd
+wazuh-execd
+wazuh-logcollector
+wazuh-maild
+wazuh-monitord
+wazuh-remoted
+wazuh-reportd
+wazuh-syscheckd
+wazuh-clusterd
+wazuh-modulesd
+wazuh-db
+Tables available for wazuh-db
+wazuh-integratord
+Tools
+wazuh-control
+agent-auth
+agent_control
+manage_agents
+wazuh-logtest
+clear_stats
+wazuh-regex
+rbac_control
+update_ruleset
+verify-agent-conf
+agent_groups
+agent_upgrade
+cluster_control
+fim_migrate
+wazuh-keystore
+Unattended Installation
+Statistics files
+wazuh-agentd.state
+wazuh-remoted.state
+wazuh-analysisd.state
+wazuh-logcollector.state
+Cloud security
+Monitoring Amazon Web Services (AWS)
+Monitoring AWS instances
+Monitoring AWS based services
+Prerequisites
+Installing dependencies
+Configuring an S3 Bucket
+Configuring AWS IAM Identities
+Configuring AWS policy
+Configuring AWS credentials
+Considerations for the Wazuh module for AWS configuration
+Supported services
+AWS CloudTrail
+Amazon Virtual Private Cloud (VPC)
+AWS Config
+AWS Key Management Service (KMS)
+Amazon Macie
+AWS Trusted Advisor
+Amazon GuardDuty
+Amazon Web Application Firewall (WAF)
+Amazon S3 Server Access
+Amazon Inspector Classic
+Amazon CloudWatch Logs
+Amazon ECR Image scanning
+Cisco Umbrella
+Elastic Load Balancers
+Amazon Application Load Balancer (ALB)
+Amazon Classic Load Balancer (CLB)
+Amazon Network Load Balancer (NLB)
+Amazon Security Lake
+Custom Logs Buckets
+AWS Security Hub
+Troubleshooting
+Monitoring Microsoft Azure with Wazuh
+Monitoring instances
+Monitoring Azure platform and services
+Microsoft Azure Log Analytics
+Microsoft Azure Storage
+Microsoft Graph
+Monitoring Microsoft Graph services with Wazuh
+Microsoft Graph API setup
+Microsoft Intune integration
+Monitoring GitHub
+Monitoring GitHub audit logs
+Monitoring Google Cloud
+Monitoring Google Cloud instances
+Monitoring Google Cloud services
+Prerequisites
+Installing dependencies
+Creating Google Cloud credentials
+Gcloud Python script
+Visualizing Google Cloud events on the Wazuh dashboard
+Configuring the supported services
+Monitoring Google Cloud Pub/Sub
+Use cases
+Monitoring Google Cloud Storage buckets
+Cloud Security Posture Management
+Monitoring Office 365
+Monitoring Office 365 audit logs
+Regulatory compliance
+Using Wazuh for PCI DSS compliance
+Log data analysis
+Configuration assessment
+Malware detection
+File integrity monitoring
+Vulnerability detection
+Active Response
+System inventory
+Visualization and dashboard
+Using Wazuh for GDPR compliance
+GDPR II, Principles <gdpr_II>
+GDPR III, Rights of the data subject <gdpr_III>
+GDPR IV, Controller and processor <gdpr_IV>
+Using Wazuh for HIPAA compliance
+Visualization and dashboard
+Log data analysis
+Configuration assessment
+Malware detection
+File integrity monitoring
+Vulnerability detection
+Active Response
+Using Wazuh for NIST 800-53 compliance
+Visualization and dashboard
+Log data analysis
+Security configuration assessment
+Malware detection
+File integrity monitoring
+System inventory
+Vulnerability detection
+Active Response
+Threat intelligence
+Using Wazuh for TSC compliance
+Common criteria 2.1
+Common criteria 3.1
+Common criteria 5.1
+Common criteria 6.1
+Common criteria 7.1
+Common criteria 8.1
+The additional criteria
+Availability - A1.1
+Processing integrity - PI1.4
+Proof of Concept guide
+Blocking a known malicious actor
+File integrity monitoring
+Detecting a brute-force attack
+Monitoring Docker events
+Monitoring AWS infrastructure
+Detecting unauthorized processes
+Network IDS integration
+Detecting an SQL injection attack
+Detecting suspicious binaries
+Detecting and removing malware using VirusTotal integration
+Vulnerability detection
+Detecting malware using YARA integration
+Detecting hidden processes
+Monitoring execution of malicious commands
+Detecting a Shellshock attack
+Leveraging LLMs for alert enrichment
+Upgrade guide
+Wazuh central components
+Wazuh agent
+Linux
+Windows
+macOS
+Solaris
+AIX
+HP-UX
+Troubleshooting
+Integrations guide
+Elastic Stack integration
+OpenSearch integration
+Splunk integration
+Amazon Security Lake integration
+Backup guide
+Creating a backup
+Wazuh central components
+Wazuh agent
+Restoring Wazuh from backup
+Wazuh central components
+Wazuh agent
+Wazuh Cloud service
+Getting started
+Sign up for a trial
+Access the Wazuh dashboard
+Enroll agents
+Cloud service FAQ
+Your environment
+Authentication and authorization
+Settings
+Limits
+Cancellation
+Monitor usage
+Forward syslog events
+Agents without Internet access
+SMTP configuration
+Custom DNS
+Technical FAQ
+AI Analyst
+Account and billing
+Edit user settings
+Manage your billing details
+See your billing cycle and history
+Update billing and operational contacts
+Stop charges for an environment
+Billing FAQ
+Archive data
+Configuration
+Filename format
+Access
+Wazuh Cloud API
+Authentication
+Reference
+CLI
+Glossary
+Development
+Client keys file
+Standard OSSEC message format
+Makefile options
+Wazuh cluster
+Wazuh package generation
+Virtual machine
+Wazuh server
+Wazuh indexer
+Wazuh dashboard
+Wazuh agent
+Wazuh-Logtest
+SELinux Wazuh context
+RBAC database integrity
+Configuring core dump generation
+Release notes
+4.x
+4.13.1 Release notes
+4.13.0 Release notes
+4.12.0 Release notes
+4.11.2 Release notes
+4.11.1 Release notes
+4.11.0 Release notes
+4.10.3 Release notes
+4.10.2 Release notes
+4.10.1 Release notes
+4.10.0 Release notes
+4.9.2 Release notes
+4.9.1 Release notes
+4.9.0 Release notes
+4.8.2 Release notes
+4.8.1 Release notes
+4.8.0 Release notes
+4.7.5 Release notes
+4.7.4 Release notes
+4.7.3 Release notes
+4.7.2 Release notes
+4.7.1 Release notes
+4.7.0 Release notes
+4.6.0 Release notes
+4.5.4 Release notes
+4.5.3 Release notes
+4.5.2 Release notes
+4.5.1 Release notes
+4.5.0 Release notes
+4.4.5 Release notes
+4.4.4 Release notes
+4.4.3 Release notes
+4.4.2 Release notes
+4.4.1 Release notes
+4.4.0 Release notes
+4.3.11 Release notes
+4.3.10 Release notes
+4.3.9 Release notes
+4.3.8 Release notes
+4.3.7 Release notes
+4.3.6 Release notes
+4.3.5 Release notes
+4.3.4 Release notes
+4.3.3 Release notes
+4.3.2 Release notes
+4.3.1 Release notes
+4.3.0 Release notes
+4.2.7 Release notes
+4.2.6 Release notes
+4.2.5 Release notes
+4.2.4 Release notes
+4.2.3 Release notes
+4.2.2 Release notes
+4.2.1 Release notes
+4.2.0 Release notes
+4.1.5 Release notes
+4.1.4 Release notes
+4.1.3 Release notes
+4.1.2 Release notes
+4.1.1 Release notes
+4.1.0 Release notes
+4.0.4 Release notes
+4.0.3 Release notes
+4.0.2 Release notes
+4.0.1 Release notes
+4.0.0 Release notes
+3.x
+3.13.6 Release notes
+3.13.5 Release notes
+3.13.4 Release notes
+3.13.3 Release notes
+3.13.2 Release notes
+3.13.1 Release notes
+3.13.0 Release notes
+3.12.3 Release notes
+3.12.2 Release notes
+3.12.1 Release notes
+3.12.0 Release notes
+3.11.4 Release notes
+3.11.3 Release notes
+3.11.2 Release notes
+3.11.1 Release notes
+3.11.0 Release notes
+3.10.2 Release notes
+3.10.1 Release notes
+3.10.0 Release notes
+3.9.5 Release notes
+3.9.4 Release notes
+3.9.3 Release notes
+3.9.2 Release notes
+3.9.1 Release notes
+3.9.0 Release notes
+3.8.2 Release notes
+3.8.1 Release notes
+3.8.0 Release notes
+3.7.2 Release notes
+3.7.1 Release notes
+3.7.0 Release notes
+3.6.1 Release notes
+3.6.0 Release notes
+3.5.0 Release notes
+3.4.0 Release notes
+3.3.1 Release notes
+3.3.0 Release notes
+3.2.4 Release notes
+3.2.3 Release notes
+3.2.2 Release notes
+3.2.1 Release notes
+3.2.0 Release notes
+3.1.0 Release notes
+3.0.0 Release notes
+2.x
+2.1.0 Release notes
+Upgrade guideWazuh central components
+Wazuh central components
+This section guides you through the upgrade process of the Wazuh indexer, the Wazuh server, and the Wazuh dashboard.
+All-in-one deployments: Execute all commands and configuration actions on the same node since all components run on a single system.
+Multi-node cluster deployments: Run commands and apply configurations on the respective node where the component being upgraded is located.
+Warning
+Downgrading to version 4.11 and earlier is not possible. Since version 4.12.0, Wazuh uses a newer version of Apache Lucene.
+Apache Lucene does not support downgrades, meaning once you upgrade to Wazuh 4.12.0 or later, you cannot roll back to 4.11 and earlier versions without a fresh installation of the indexer.
+To avoid data loss, create an index snapshot before upgrading. For more details, refer to the Opensearch documentation.
+Preparing the upgrade
+Perform the steps below before upgrading any of the Wazuh components. In case Wazuh is installed in a multi-node cluster configuration, repeat the following steps for every node.
+Ensure you have added the Wazuh repository to every Wazuh indexer, server, and dashboard node before proceeding to perform the upgrade actions.
+YumAPT
+Import the GPG key.
+# rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH
+Add the repository.
+For RHEL-compatible systems version 8 and earlier, use the following command:
+# echo -e '[wazuh]\ngpgcheck=1\ngpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH\nenabled=1\nname=EL-$releasever - Wazuh\nbaseurl=https://packages.wazuh.com/4.x/yum/\nprotect=1' | tee /etc/yum.repos.d/wazuh.repo
+For RHEL-compatible systems version 9 and later, use the following command:
+# echo -e '[wazuh]\ngpgcheck=1\ngpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH\nenabled=1\nname=EL-$releasever - Wazuh\nbaseurl=https://packages.wazuh.com/4.x/yum/\npriority=1' | tee /etc/yum.repos.d/wazuh.repo
+Install the following packages if missing.
+# apt-get install gnupg apt-transport-https
+Install the GPG key.
+# curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg
+Add the repository.
+# echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list
+Update the packages information.
+# apt-get update
+(Recommended) Export customizations from the Wazuh dashboard. This step helps to preserve visualizations, dashboards, and other saved objects in case there are any issues during the upgrade process.
+Navigate to Dashboard management > Dashboards Management > Saved objects on the Wazuh dashboard.
+Select which objects to export and click Export, or click Export all objects to export everything.
+Stop the Filebeat and Wazuh dashboard services if installed in the node:
+SystemdSysV init# systemctl stop filebeat
+# systemctl stop wazuh-dashboard
+# service filebeat stop
+# service wazuh-dashboard stop
+Upgrading the Wazuh indexer
+The Wazuh indexer cluster remains operational throughout the upgrade. The rolling upgrade process allows nodes to be updated one at a time, ensuring continuous service availability and minimizing disruptions. The steps detailed in the following sections apply to both single-node and multi-node Wazuh indexer clusters.
+Preparing the Wazuh indexer cluster for upgrade
+Perform the following steps on any of the Wazuh indexer nodes replacing <WAZUH_INDEXER_IP_ADDRESS>, <USERNAME>, and <PASSWORD>.
+Disable shard replication to prevent shard replicas from being created while Wazuh indexer nodes are being taken offline for the upgrade.
+curl -X PUT "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cluster/settings"  -u <USERNAME> -k -H 'Content-Type: application/json' -d'
+{
+"persistent": {
+"cluster.routing.allocation.enable": "primaries"
+}
+}
+'
+{
+"acknowledged" : true,
+"persistent" : {
+"cluster" : {
+"routing" : {
+"allocation" : {
+"enable" : "primaries"
+}
+}
+}
+},
+"transient" : {}
+}
+Perform a flush operation on the cluster to commit transaction log entries to the index.
+# curl -X POST "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_flush" -u <USERNAME> -k
+{
+"_shards" : {
+"total" : 19,
+"successful" : 19,
+"failed" : 0
+}
+}
+Run the following command on the Wazuh manager node(s) if running a single-node Wazuh indexer cluster.
+SystemdSysV init# systemctl stop wazuh-manager
+# service wazuh-manager stop
+Upgrading the Wazuh indexer nodes
+Perform the following steps on each Wazuh indexer node to upgrade them. Upgrade nodes with the cluster_manager role last to maintain cluster connectivity among online nodes.
+Note
+You can check the role of Wazuh indexer nodes in the cluster using the following command:
+# curl -k -u <USERNAME> https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cat/nodes?v
+Stop the Wazuh indexer service.
+SystemdSysV init# systemctl stop wazuh-indexer
+# service wazuh-indexer stop
+Backup the /etc/wazuh-indexer/jvm.options file to preserve your custom JVM settings. For example, create a copy of the file using the following command:
+# cp /etc/wazuh-indexer/jvm.options /etc/wazuh-indexer/jvm.options.old
+Upgrade the Wazuh indexer to the latest version.
+YumAPT# yum upgrade wazuh-indexer
+# apt-get install wazuh-indexer
+Note
+When prompted, choose to replace the /etc/wazuh-indexer/jvm.options file with the updated version.
+Manually reapply any custom settings to the /etc/wazuh-indexer/jvm.options file from your backup file.
+Restart the Wazuh indexer service.
+SystemdSysV init# systemctl daemon-reload
+# systemctl enable wazuh-indexer
+# systemctl start wazuh-indexer
+Choose one option according to the operating system used.
+RPM-based operating system:
+# chkconfig --add wazuh-indexer
+# service wazuh-indexer start
+Debian-based operating system:
+# update-rc.d wazuh-indexer defaults 95 10
+# service wazuh-indexer start
+Repeat steps 1 to 5 above on all Wazuh indexer nodes before proceeding to the post-upgrade actions.
+Post-upgrade actions
+Perform the following steps on any of the Wazuh indexer nodes replacing <WAZUH_INDEXER_IP_ADDRESS>, <USERNAME>, and <PASSWORD>.
+Check that the newly upgraded Wazuh indexer nodes are in the cluster.
+# curl -k -u <USERNAME> https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cat/nodes?v
+Re-enable shard allocation.
+curl -X PUT "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cluster/settings" -u <USERNAME> -k -H 'Content-Type: application/json' -d'
+{
+"persistent": {
+"cluster.routing.allocation.enable": "all"
+}
+}
+'
+{
+"acknowledged" : true,
+"persistent" : {
+"cluster" : {
+"routing" : {
+"allocation" : {
+"enable" : "all"
+}
+}
+}
+},
+"transient" : {}
+}
+Check the status of the Wazuh indexer cluster again to see if the shard allocation has finished.
+# curl -k -u <USERNAME> https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cat/nodes?v
+ip         heap.percent ram.percent cpu load_1m load_5m load_15m node.role node.roles                                        cluster_manager name
+172.18.0.3           34          86  32    6.67    5.30     2.53 dimr      cluster_manager,data,ingest,remote_cluster_client -               wazuh2.indexer
+172.18.0.4           21          86  32    6.67    5.30     2.53 dimr      cluster_manager,data,ingest,remote_cluster_client *               wazuh1.indexer
+172.18.0.2           16          86  32    6.67    5.30     2.53 dimr      cluster_manager,data,ingest,remote_cluster_client -               wazuh3.indexer
+Note
+Note that the upgrade process doesn't update plugins installed manually. Outdated plugins might cause the upgrade to fail.
+Run the following command on each Wazuh indexer node to list installed plugins and identify those that require an update:
+# /usr/share/wazuh-indexer/bin/opensearch-plugin list
+In the output, plugins that require an update will be labeled as "outdated".
+Remove the outdated plugins and reinstall the latest version replacing <PLUGIN_NAME> with the name of the plugin:
+# /usr/share/wazuh-indexer/bin/opensearch-plugin remove <PLUGIN_NAME>
+# /usr/share/wazuh-indexer/bin/opensearch-plugin install <PLUGIN_NAME>
+Upgrading the Wazuh server
+When upgrading a multi-node Wazuh manager cluster, run the upgrade in every node. Start with the master node to reduce server downtime. To successfully upgrade the Wazuh server, follow these steps in order:
+Upgrade the Wazuh manager.
+Configure the vulnerability detection. (if required based on the version you are upgrading from).
+Configure Filebeat.
+Note
+Upgrading from Wazuh 4.2.x or lower creates the wazuh operating system user and group to replace ossec. To avoid upgrade conflicts, make sure that the wazuh user and group are not present in your operating system.
+Upgrading the Wazuh manager
+Upgrade the Wazuh manager to the latest version:
+YumAPT# yum upgrade wazuh-manager
+# apt-get install wazuh-manager
+Warning
+If the /var/ossec/etc/ossec.conf configuration file was modified, it will not be replaced by the upgrade. You will therefore have to add the settings of the new capabilities manually. More information can be found in the User manual.
+Run the following command on the Wazuh manager node(s) to start the Wazuh manager service if you stopped it earlier:
+SystemdSysV init# systemctl start wazuh-manager
+# service wazuh-manager start
+Configuring vulnerability detection
+If upgrading from version 4.8.x or later, skip the vulnerability detection configuration and proceed to Configuring Filebeat. No action is needed as the vulnerability detection block is already configured.
+When upgrading from Wazuh version 4.7.x or earlier, follow these steps to configure the vulnerability detection block.
+Update the configuration file
+Edit the /var/ossec/etc/ossec.conf file to include the new <vulnerability-detection> block. Remove the old <vulnerability-detector> block if it exists.
+The updated configuration enables the Wazuh Vulnerability Detection module to index vulnerabilities and alerts, with the vulnerability feed refreshing every 60 minutes. Add the following block to the configuration file:
+<vulnerability-detection>
+<enabled>yes</enabled>
+<index-status>yes</index-status>
+<feed-update-interval>60m</feed-update-interval>
+</vulnerability-detection>
+Configure the indexer block
+Ensure the <indexer> block contains the details of your Wazuh indexer host. During the upgrade, a default <indexer> configuration is added under <ossec_conf> if none exists in /var/ossec/etc/ossec.conf. By default, the configuration includes one host with the IP address 0.0.0.0:
+<indexer>
+<enabled>yes</enabled>
+<hosts>
+<host>https://0.0.0.0:9200</host>
+</hosts>
+<ssl>
+<certificate_authorities>
+<ca>/etc/filebeat/certs/root-ca.pem</ca>
+</certificate_authorities>
+<certificate>/etc/filebeat/certs/filebeat.pem</certificate>
+<key>/etc/filebeat/certs/filebeat-key.pem</key>
+</ssl>
+</indexer>
+Replace 0.0.0.0 with the IP address or hostname of your Wazuh indexer node. You can find this value in the Filebeat configuration file at /etc/filebeat/filebeat.yml. Ensure that the <certificate> and <key> names match the files located in /etc/filebeat/certs/.
+If using a Wazuh indexer cluster, add a <host> entry in the Wazuh manager /var/ossec/etc/ossec.conf file for each node in the cluster. For example, for a two-node configuration:
+<hosts>
+<host>https://10.0.0.1:9200</host>
+<host>https://10.0.0.2:9200</host>
+</hosts>
+The Wazuh server will prioritize reporting to the first indexer node in the list and switch to the next available node if it becomes unavailable.
+Store Wazuh indexer credentials
+Save the Wazuh indexer username and password into the Wazuh manager keystore using the Wazuh-keystore tool:
+# echo '<INDEXER_USERNAME>' | /var/ossec/bin/wazuh-keystore -f indexer -k username
+# echo '<INDEXER_PASSWORD>' | /var/ossec/bin/wazuh-keystore -f indexer -k password
+If you have forgotten your Wazuh indexer password, refer to the password management guide to reset it.
+Configuring Filebeat
+When upgrading Wazuh, you must also update the Wazuh Filebeat module and the alerts template to ensure compatibility with the latest Wazuh indexer version. Follow these steps to configure Filebeat properly:
+Download the Wazuh module for Filebeat:
+# curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.4.tar.gz | sudo tar -xvz -C /usr/share/filebeat/module
+Download the alerts template:
+# curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/wazuh/wazuh/v4.13.1/extensions/elasticsearch/7.x/wazuh-template.json
+# chmod go+r /etc/filebeat/wazuh-template.json
+Restart Filebeat:
+SystemdSysV init# systemctl daemon-reload
+# systemctl enable filebeat
+# systemctl start filebeat
+Choose one option according to the OS used:
+Debian based OS
+# update-rc.d filebeat defaults 95 10
+# service filebeat start
+RPM based OS
+# chkconfig --add filebeat
+# service filebeat start
+Upload the new Wazuh template and pipelines for Filebeat:
+# filebeat setup --pipelines
+# filebeat setup --index-management -E output.logstash.enabled=false
+If you are upgrading from Wazuh versions v4.8.x or v4.9.x, manually update the wazuh-states-vulnerabilities-* mappings using the following command. Replace <WAZUH_INDEXER_IP_ADDRESS>, <USERNAME>, and <PASSWORD> with the values applicable to your deployment.
+Skip this step if upgrading from other versions.
+curl -X PUT "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/wazuh-states-vulnerabilities-*/_mapping"  -u <USERNAME> -k -H 'Content-Type: application/json' -d'
+{
+"properties": {
+"vulnerability": {
+"properties": {
+"under_evaluation": {
+"type": "boolean"
+},
+"scanner": {
+"properties": {
+"source": {
+"type": "keyword",
+"ignore_above": 1024
+}
+}
+}
+}
+}
+}
+}
+'
+Upgrading the Wazuh dashboard
+Backup the /etc/wazuh-dashboard/opensearch_dashboards.yml file to save your settings.  For example, create a copy of the file using the following command:
+# cp /etc/wazuh-dashboard/opensearch_dashboards.yml /etc/wazuh-dashboard/opensearch_dashboards.yml.old
+Upgrade the Wazuh dashboard.
+YumAPT# yum upgrade wazuh-dashboard
+# apt-get install wazuh-dashboard
+Note
+When prompted, choose to replace the /etc/wazuh-dashboard/opensearch_dashboards.yml file with the updated version.
+Manually reapply any configuration changes to the /etc/wazuh-dashboard/opensearch_dashboards.yml file. Ensure that the values of server.ssl.key and server.ssl.certificate match the files located in /etc/wazuh-dashboard/certs/.
+Ensure the value of uiSettings.overrides.defaultRoute in the /etc/wazuh-dashboard/opensearch_dashboards.yml file is set to /app/wz-home as shown below:
+uiSettings.overrides.defaultRoute: /app/wz-home
+Restart the Wazuh dashboard:
+SystemdSysV init# systemctl daemon-reload
+# systemctl enable wazuh-dashboard
+# systemctl start wazuh-dashboard
+Choose one option according to your operating system:
+RPM-based operating system:
+# chkconfig --add wazuh-dashboard
+# service wazuh-dashboard start
+Debian-based operating system:
+# update-rc.d wazuh-dashboard defaults 95 10
+# service wazuh-dashboard start
+You can now access the Wazuh dashboard via:  https://<DASHBOARD_IP_ADDRESS>/app/wz-home.
+Import the saved customizations exported while preparing the upgrade.
+Navigate to Dashboard management > Dashboard Management > Saved objects on the Wazuh dashboard.
+Click Import, add the ndjson file and click Import.
+Note
+Note that the upgrade process doesn't update plugins installed manually. Outdated plugins might cause the upgrade to fail.
+Run the following command on the Wazuh dashboard server to list installed plugins and identify those that require an update:
+# sudo -u wazuh-dashboard /usr/share/wazuh-dashboard/bin/opensearch-dashboards-plugin list
+In the output, plugins that require an update will be labeled as "outdated".
+Remove the outdated plugins and reinstall the latest version replacing <PLUGIN_NAME> with the name of the plugin:
+# sudo -u wazuh-dashboard /usr/share/wazuh-dashboard/bin/opensearch-dashboards-plugin remove <PLUGIN_NAME>
+# sudo -u wazuh-dashboard /usr/share/wazuh-dashboard/bin/opensearch-dashboards-plugin install <PLUGIN_NAME>
+Next steps
+The Wazuh server, indexer, and dashboard are now successfully upgraded. You can verify the versions by running the following commands on the node(s) where the central components are installed:
+YumAPT# yum list installed wazuh-indexer
+# yum list installed wazuh-manager
+# yum list installed wazuh-dashboard
+# apt list --installed wazuh-indexer
+# apt list --installed wazuh-manager
+# apt list --installed wazuh-dashboard
+Next, upgrade the Wazuh agents by following the instructions in Upgrading the Wazuh agent.
+Upgrade guide
+Wazuh agent
+On this page
+Wazuh central components
+Preparing the upgrade
+Upgrading the Wazuh indexer
+Preparing the Wazuh indexer cluster for upgrade
+Upgrading the Wazuh indexer nodes
+Post-upgrade actions
+Upgrading the Wazuh server
+Upgrading the Wazuh manager
+Configuring vulnerability detection
+Configuring Filebeat
+Upgrading the Wazuh dashboard
+Next steps
+Explore
+Overview
+XDR
+SIEM
+Services
+Wazuh Cloud
+Professional support
+Consulting services
+Training courses
+Company
+About us
+Customers
+Partners
+Documentation
+Quickstart
+Getting started
+Installation guide
+Resources
+Blog
+Community
+Legal
+© 2025 Wazuh Inc.
+Contact us
++1 (844) 349 2984
+X
+LinkedIn
+Reddit
+GitHub
+Discord
+Slack
+Mailing list
+Close
+Wazuh central components - Upgrade guide Â· Wazuh documentation
+Blog
+Community
+Contact us
+X
+LinkedIn
+Reddit
+GitHub
+Discord
+Slack
+Mailing list
+Search here
+Close
+Search
+Wazuh
+Platform
+Overview
+XDR
+SIEM
+Cloud
+CTI
+Documentation
+Services
+Professional support
+Consulting services
+Training courses
+Partners
+Become a partner
+Find a partner
+Company
+Customers
+About us
+Our team
+Resources
+Contact us
+Search term
+Search now!
+Getting started
+Components
+Wazuh indexer
+Wazuh server
+Wazuh dashboard
+Wazuh agent
+Architecture
+Use cases
+Configuration assessment
+Malware detection
+File integrity monitoring
+Threat hunting
+Log data analysis
+Vulnerability detection
+Incident response
+Regulatory compliance
+IT hygiene
+Container security
+Posture management
+Cloud workload protection
+Quickstart
+Installation guide
+Wazuh indexer
+Assisted installation
+Step-by-step installation
+Wazuh server
+Assisted installation
+Step-by-step installation
+Wazuh dashboard
+Assisted installation
+Step-by-step installation
+Wazuh agent
+Linux
+Windows
+macOS
+Solaris
+AIX
+HP-UX
+Packages list
+Uninstalling Wazuh
+Uninstalling the Wazuh central components
+Uninstalling the Wazuh agent
+Installation alternatives
+Virtual Machine (OVA)
+Amazon Machine Images (AMI)
+Deployment on Docker
+Wazuh Docker deployment
+Changing the default password of Wazuh users
+Building Docker images locally
+Wazuh Docker utilities
+Upgrading Wazuh Docker
+Uninstalling the Wazuh Docker deployment
+Deployment on Kubernetes
+Kubernetes configuration
+Deployment
+Upgrade Wazuh installed in Kubernetes
+Clean Up
+Offline installation guide
+Install Wazuh components using the assisted method
+Install Wazuh components step by step
+Installation from sources
+Installing the Wazuh manager from sources
+Installing the Wazuh agent from sources
+Deployment with Ansible
+Installation Guide
+Install Ansible
+Install Wazuh indexer and dashboard
+Install Wazuh manager
+Install a Wazuh cluster
+Install Wazuh Agent
+Remote endpoints connection
+Roles
+Wazuh indexer
+Wazuh dashboard
+Filebeat
+Wazuh Manager
+Wazuh Agent
+Variables references
+Deployment with Puppet
+Set up Puppet
+Installing Puppet master
+Installing Puppet agent
+Setting up Puppet certificates
+Wazuh Puppet module
+Wazuh manager class
+Wazuh agent class
+User manual
+Wazuh server
+Wazuh manager
+Indexer integration
+Alert management
+Event logging
+External API integration
+Queuing mechanisms
+Wazuh server cluster
+Architecture overview
+Types of nodes in a Wazuh server cluster
+How the Wazuh server cluster works
+Wazuh cluster nodes configuration
+Data synchronization
+Certificates deployment
+Adding new Wazuh server nodes
+Certificates creation
+Configuring existing components to connect with the new node
+Wazuh server node(s) installation
+Testing the cluster
+Agent connections
+Load balancers
+Wazuh server API
+Getting started
+Configuration
+Securing the Wazuh server API
+Role-Based Access Control
+How it works
+Authorization Context
+RBAC Reference
+Filtering data using Wazuh Query Language (WQL)
+Use cases
+Reference
+Wazuh indexer
+Wazuh indexer indices
+Re-indexing
+Wazuh indexer tuning
+Migrating Wazuh indices
+Wazuh indexer configuration on hardened endpoints
+Wazuh indexer cluster
+Certificates deployment
+Adding Wazuh indexer nodes
+Wazuh indexer cluster tuning
+Index lifecycle management
+Cluster management
+Wazuh indexer API
+Getting started
+Configuration
+Securing the Wazuh indexer API
+Use cases
+Reference
+Wazuh dashboard
+Navigating the Wazuh dashboard
+Creating custom dashboards
+Filtering data using Wazuh Query Language (WQL)
+Enabling multi-tenancy
+Configuring third-party SSL certificates
+Configuring SSL certificates on the Wazuh dashboard using Letâs Encrypt
+Configuring SSL certificates on the Wazuh dashboard using NGINX
+Setting up custom branding
+Wazuh dashboard settings
+Troubleshooting
+Certificates deployment
+Wazuh agent
+Wazuh agent enrollment
+Requirements
+Wazuh agent life cycle
+Enrollment methods
+Enrollment via agent configuration
+Linux/Unix
+Windows
+macOS
+Enrollment via Wazuh server API
+Requesting the client key
+Importing the client key to the Wazuh agent
+Additional security options
+Using password authentication
+Wazuh manager identity verification
+Wazuh agent identity verification
+Deployment variables
+Linux
+Windows
+macOS
+AIX
+Troubleshooting
+Wazuh agent management
+Wazuh agent connection
+Wazuh agent administration
+Querying the Wazuh agent configuration
+Grouping agents
+Listing agents
+Listing agents using the CLI
+Listing agents using the Wazuh server API
+Listing agents using the Wazuh dashboard
+Anti-tampering
+Removing agents
+Remove agents using the CLI
+Remove agents using the Wazuh server API
+Remote upgrading
+Upgrading the Wazuh agent
+Wazuh signed package (WPK) files
+Agent upgrade module - How it works
+Wazuh agent queue
+Agent labels
+Agent key request
+Data analysis
+Decoders
+JSON decoder
+Dynamic fields
+Sibling Decoders
+Custom decoders
+Rules
+Default rules
+Custom rules
+Rules classification
+Ruleset XML syntax
+Decoders Syntax
+Rules Syntax
+Regular Expression Syntax
+Perl-compatible Regular Expressions
+Testing decoders and rules
+Using CDB lists
+MITRE ATT&CK framework
+User administration
+Password management
+Wazuh RBAC - How to create and map internal users
+Single sign-on
+Setup single sign-on with administrator role
+Okta
+Microsoft Entra ID
+PingOne
+Google
+Jumpcloud
+OneLogin
+Keycloak
+Setup single sign-on with read-only role
+Okta
+Microsoft Entra ID
+PingOne
+Google
+Jumpcloud
+OneLogin
+Keycloak
+LDAP integration
+Capabilities
+File integrity monitoring
+How it works
+How to configure the FIM module
+Interpreting the FIM module analysis
+Basic settings
+Creating custom FIM rules
+Advanced settings
+Use cases
+Detecting malware persistence technique
+Detecting account manipulation
+Monitoring files at specific intervals
+Reporting file changes
+Monitoring configuration changes
+Windows Registry monitoring
+Malware detection
+File integrity monitoring and threat detection rules
+Rootkits behavior detection
+CDB lists and threat intelligence
+VirusTotal integration
+File integrity monitoring and YARA
+ClamAV logs collection
+Windows Defender logs collection
+Custom rules to detect malware IOC
+Security Configuration Assessment
+How SCA works
+How to configure SCA
+Available SCA policies
+Creating custom SCA policies
+Use cases
+Active Response
+How to configure Active Response
+Default active response scripts
+Custom active response scripts
+Use cases
+Blocking SSH brute-force attack with Active Response
+Restarting the Wazuh agent with Active Response
+Disabling a Linux user account with Active Response
+Additional information
+Log data collection
+How it works
+Configuration for monitoring log files
+Configuring syslog on the Wazuh server
+Journald log collection
+Using multiple socket outputs
+Configuring log collection for different operating systems
+Log data analysis
+Use cases
+Vulnerability detection
+How it works
+Configuration
+Troubleshooting
+Frequently Asked Questions (FAQs)
+Known issues
+Command monitoring
+How it works
+Configuration
+Command output analysis
+Use cases
+Monitoring running processes
+Disk space utilization
+Check if the output changed
+Detect USB Storage
+Load average
+Container security
+Using Wazuh to monitor Docker
+Use cases
+System inventory
+How it works
+Configuration
+Viewing system inventory data
+Generating system inventory reports
+Available inventory fields
+Compatibility matrix
+Using Syscollector information to trigger alerts
+Osquery
+Monitoring system calls
+How it works
+Configuration
+Use cases
+Monitoring file and directory access
+Monitoring commands run as root
+Privilege abuse
+Agentless monitoring
+How it works
+Connection
+Configuration
+Visualization
+Use cases
+Reference
+Local configuration (ossec.conf)
+active-response
+agentless
+agent-upgrade
+alerts
+anti_tampering
+auth
+client
+client_buffer
+cluster
+command
+database_output
+email_alerts
+global
+github
+indexer
+integration
+labels
+localfile
+logging
+ms-graph
+office365
+remote
+reports
+rootcheck
+sca
+rule_test
+ruleset
+socket
+syscheck
+syslog_output
+task-manager
+fluent-forward
+gcp-pubsub
+gcp-bucket
+vulnerability-detection
+wodle name="command"
+wodle name="aws-s3"
+wodle name="syscollector"
+wazuh-db
+wodle name="osquery"
+wodle name="docker-listener"
+wodle name="azure-logs"
+wodle name="agent-key-polling"
+Verifying configuration
+Centralized configuration (agent.conf)
+Internal configuration
+Daemons
+wazuh-agentd
+wazuh-agentlessd
+wazuh-analysisd
+wazuh-authd
+wazuh-csyslogd
+wazuh-dbd
+wazuh-execd
+wazuh-logcollector
+wazuh-maild
+wazuh-monitord
+wazuh-remoted
+wazuh-reportd
+wazuh-syscheckd
+wazuh-clusterd
+wazuh-modulesd
+wazuh-db
+Tables available for wazuh-db
+wazuh-integratord
+Tools
+wazuh-control
+agent-auth
+agent_control
+manage_agents
+wazuh-logtest
+clear_stats
+wazuh-regex
+rbac_control
+update_ruleset
+verify-agent-conf
+agent_groups
+agent_upgrade
+cluster_control
+fim_migrate
+wazuh-keystore
+Unattended Installation
+Statistics files
+wazuh-agentd.state
+wazuh-remoted.state
+wazuh-analysisd.state
+wazuh-logcollector.state
+Cloud security
+Monitoring Amazon Web Services (AWS)
+Monitoring AWS instances
+Monitoring AWS based services
+Prerequisites
+Installing dependencies
+Configuring an S3 Bucket
+Configuring AWS IAM Identities
+Configuring AWS policy
+Configuring AWS credentials
+Considerations for the Wazuh module for AWS configuration
+Supported services
+AWS CloudTrail
+Amazon Virtual Private Cloud (VPC)
+AWS Config
+AWS Key Management Service (KMS)
+Amazon Macie
+AWS Trusted Advisor
+Amazon GuardDuty
+Amazon Web Application Firewall (WAF)
+Amazon S3 Server Access
+Amazon Inspector Classic
+Amazon CloudWatch Logs
+Amazon ECR Image scanning
+Cisco Umbrella
+Elastic Load Balancers
+Amazon Application Load Balancer (ALB)
+Amazon Classic Load Balancer (CLB)
+Amazon Network Load Balancer (NLB)
+Amazon Security Lake
+Custom Logs Buckets
+AWS Security Hub
+Troubleshooting
+Monitoring Microsoft Azure with Wazuh
+Monitoring instances
+Monitoring Azure platform and services
+Microsoft Azure Log Analytics
+Microsoft Azure Storage
+Microsoft Graph
+Monitoring Microsoft Graph services with Wazuh
+Microsoft Graph API setup
+Microsoft Intune integration
+Monitoring GitHub
+Monitoring GitHub audit logs
+Monitoring Google Cloud
+Monitoring Google Cloud instances
+Monitoring Google Cloud services
+Prerequisites
+Installing dependencies
+Creating Google Cloud credentials
+Gcloud Python script
+Visualizing Google Cloud events on the Wazuh dashboard
+Configuring the supported services
+Monitoring Google Cloud Pub/Sub
+Use cases
+Monitoring Google Cloud Storage buckets
+Cloud Security Posture Management
+Monitoring Office 365
+Monitoring Office 365 audit logs
+Regulatory compliance
+Using Wazuh for PCI DSS compliance
+Log data analysis
+Configuration assessment
+Malware detection
+File integrity monitoring
+Vulnerability detection
+Active Response
+System inventory
+Visualization and dashboard
+Using Wazuh for GDPR compliance
+GDPR II, Principles <gdpr_II>
+GDPR III, Rights of the data subject <gdpr_III>
+GDPR IV, Controller and processor <gdpr_IV>
+Using Wazuh for HIPAA compliance
+Visualization and dashboard
+Log data analysis
+Configuration assessment
+Malware detection
+File integrity monitoring
+Vulnerability detection
+Active Response
+Using Wazuh for NIST 800-53 compliance
+Visualization and dashboard
+Log data analysis
+Security configuration assessment
+Malware detection
+File integrity monitoring
+System inventory
+Vulnerability detection
+Active Response
+Threat intelligence
+Using Wazuh for TSC compliance
+Common criteria 2.1
+Common criteria 3.1
+Common criteria 5.1
+Common criteria 6.1
+Common criteria 7.1
+Common criteria 8.1
+The additional criteria
+Availability - A1.1
+Processing integrity - PI1.4
+Proof of Concept guide
+Blocking a known malicious actor
+File integrity monitoring
+Detecting a brute-force attack
+Monitoring Docker events
+Monitoring AWS infrastructure
+Detecting unauthorized processes
+Network IDS integration
+Detecting an SQL injection attack
+Detecting suspicious binaries
+Detecting and removing malware using VirusTotal integration
+Vulnerability detection
+Detecting malware using YARA integration
+Detecting hidden processes
+Monitoring execution of malicious commands
+Detecting a Shellshock attack
+Leveraging LLMs for alert enrichment
+Upgrade guide
+Wazuh central components
+Wazuh agent
+Linux
+Windows
+macOS
+Solaris
+AIX
+HP-UX
+Troubleshooting
+Integrations guide
+Elastic Stack integration
+OpenSearch integration
+Splunk integration
+Amazon Security Lake integration
+Backup guide
+Creating a backup
+Wazuh central components
+Wazuh agent
+Restoring Wazuh from backup
+Wazuh central components
+Wazuh agent
+Wazuh Cloud service
+Getting started
+Sign up for a trial
+Access the Wazuh dashboard
+Enroll agents
+Cloud service FAQ
+Your environment
+Authentication and authorization
+Settings
+Limits
+Cancellation
+Monitor usage
+Forward syslog events
+Agents without Internet access
+SMTP configuration
+Custom DNS
+Technical FAQ
+AI Analyst
+Account and billing
+Edit user settings
+Manage your billing details
+See your billing cycle and history
+Update billing and operational contacts
+Stop charges for an environment
+Billing FAQ
+Archive data
+Configuration
+Filename format
+Access
+Wazuh Cloud API
+Authentication
+Reference
+CLI
+Glossary
+Development
+Client keys file
+Standard OSSEC message format
+Makefile options
+Wazuh cluster
+Wazuh package generation
+Virtual machine
+Wazuh server
+Wazuh indexer
+Wazuh dashboard
+Wazuh agent
+Wazuh-Logtest
+SELinux Wazuh context
+RBAC database integrity
+Configuring core dump generation
+Release notes
+4.x
+4.13.1 Release notes
+4.13.0 Release notes
+4.12.0 Release notes
+4.11.2 Release notes
+4.11.1 Release notes
+4.11.0 Release notes
+4.10.3 Release notes
+4.10.2 Release notes
+4.10.1 Release notes
+4.10.0 Release notes
+4.9.2 Release notes
+4.9.1 Release notes
+4.9.0 Release notes
+4.8.2 Release notes
+4.8.1 Release notes
+4.8.0 Release notes
+4.7.5 Release notes
+4.7.4 Release notes
+4.7.3 Release notes
+4.7.2 Release notes
+4.7.1 Release notes
+4.7.0 Release notes
+4.6.0 Release notes
+4.5.4 Release notes
+4.5.3 Release notes
+4.5.2 Release notes
+4.5.1 Release notes
+4.5.0 Release notes
+4.4.5 Release notes
+4.4.4 Release notes
+4.4.3 Release notes
+4.4.2 Release notes
+4.4.1 Release notes
+4.4.0 Release notes
+4.3.11 Release notes
+4.3.10 Release notes
+4.3.9 Release notes
+4.3.8 Release notes
+4.3.7 Release notes
+4.3.6 Release notes
+4.3.5 Release notes
+4.3.4 Release notes
+4.3.3 Release notes
+4.3.2 Release notes
+4.3.1 Release notes
+4.3.0 Release notes
+4.2.7 Release notes
+4.2.6 Release notes
+4.2.5 Release notes
+4.2.4 Release notes
+4.2.3 Release notes
+4.2.2 Release notes
+4.2.1 Release notes
+4.2.0 Release notes
+4.1.5 Release notes
+4.1.4 Release notes
+4.1.3 Release notes
+4.1.2 Release notes
+4.1.1 Release notes
+4.1.0 Release notes
+4.0.4 Release notes
+4.0.3 Release notes
+4.0.2 Release notes
+4.0.1 Release notes
+4.0.0 Release notes
+3.x
+3.13.6 Release notes
+3.13.5 Release notes
+3.13.4 Release notes
+3.13.3 Release notes
+3.13.2 Release notes
+3.13.1 Release notes
+3.13.0 Release notes
+3.12.3 Release notes
+3.12.2 Release notes
+3.12.1 Release notes
+3.12.0 Release notes
+3.11.4 Release notes
+3.11.3 Release notes
+3.11.2 Release notes
+3.11.1 Release notes
+3.11.0 Release notes
+3.10.2 Release notes
+3.10.1 Release notes
+3.10.0 Release notes
+3.9.5 Release notes
+3.9.4 Release notes
+3.9.3 Release notes
+3.9.2 Release notes
+3.9.1 Release notes
+3.9.0 Release notes
+3.8.2 Release notes
+3.8.1 Release notes
+3.8.0 Release notes
+3.7.2 Release notes
+3.7.1 Release notes
+3.7.0 Release notes
+3.6.1 Release notes
+3.6.0 Release notes
+3.5.0 Release notes
+3.4.0 Release notes
+3.3.1 Release notes
+3.3.0 Release notes
+3.2.4 Release notes
+3.2.3 Release notes
+3.2.2 Release notes
+3.2.1 Release notes
+3.2.0 Release notes
+3.1.0 Release notes
+3.0.0 Release notes
+2.x
+2.1.0 Release notes
+Upgrade guideWazuh central components
+Wazuh central components
+This section guides you through the upgrade process of the Wazuh indexer, the Wazuh server, and the Wazuh dashboard.
+All-in-one deployments: Execute all commands and configuration actions on the same node since all components run on a single system.
+Multi-node cluster deployments: Run commands and apply configurations on the respective node where the component being upgraded is located.
+Warning
+Downgrading to version 4.11 and earlier is not possible. Since version 4.12.0, Wazuh uses a newer version of Apache Lucene.
+Apache Lucene does not support downgrades, meaning once you upgrade to Wazuh 4.12.0 or later, you cannot roll back to 4.11 and earlier versions without a fresh installation of the indexer.
+To avoid data loss, create an index snapshot before upgrading. For more details, refer to the Opensearch documentation.
+Preparing the upgrade
+Perform the steps below before upgrading any of the Wazuh components. In case Wazuh is installed in a multi-node cluster configuration, repeat the following steps for every node.
+Ensure you have added the Wazuh repository to every Wazuh indexer, server, and dashboard node before proceeding to perform the upgrade actions.
+YumAPT
+Import the GPG key.
+# rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH
+Add the repository.
+For RHEL-compatible systems version 8 and earlier, use the following command:
+# echo -e '[wazuh]\ngpgcheck=1\ngpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH\nenabled=1\nname=EL-$releasever - Wazuh\nbaseurl=https://packages.wazuh.com/4.x/yum/\nprotect=1' | tee /etc/yum.repos.d/wazuh.repo
+For RHEL-compatible systems version 9 and later, use the following command:
+# echo -e '[wazuh]\ngpgcheck=1\ngpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH\nenabled=1\nname=EL-$releasever - Wazuh\nbaseurl=https://packages.wazuh.com/4.x/yum/\npriority=1' | tee /etc/yum.repos.d/wazuh.repo
+Install the following packages if missing.
+# apt-get install gnupg apt-transport-https
+Install the GPG key.
+# curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg
+Add the repository.
+# echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list
+Update the packages information.
+# apt-get update
+(Recommended) Export customizations from the Wazuh dashboard. This step helps to preserve visualizations, dashboards, and other saved objects in case there are any issues during the upgrade process.
+Navigate to Dashboard management > Dashboards Management > Saved objects on the Wazuh dashboard.
+Select which objects to export and click Export, or click Export all objects to export everything.
+Stop the Filebeat and Wazuh dashboard services if installed in the node:
+SystemdSysV init# systemctl stop filebeat
+# systemctl stop wazuh-dashboard
+# service filebeat stop
+# service wazuh-dashboard stop
+Upgrading the Wazuh indexer
+The Wazuh indexer cluster remains operational throughout the upgrade. The rolling upgrade process allows nodes to be updated one at a time, ensuring continuous service availability and minimizing disruptions. The steps detailed in the following sections apply to both single-node and multi-node Wazuh indexer clusters.
+Preparing the Wazuh indexer cluster for upgrade
+Perform the following steps on any of the Wazuh indexer nodes replacing <WAZUH_INDEXER_IP_ADDRESS>, <USERNAME>, and <PASSWORD>.
+Disable shard replication to prevent shard replicas from being created while Wazuh indexer nodes are being taken offline for the upgrade.
+curl -X PUT "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cluster/settings"  -u <USERNAME> -k -H 'Content-Type: application/json' -d'
+{
+"persistent": {
+"cluster.routing.allocation.enable": "primaries"
+}
+}
+'
+{
+"acknowledged" : true,
+"persistent" : {
+"cluster" : {
+"routing" : {
+"allocation" : {
+"enable" : "primaries"
+}
+}
+}
+},
+"transient" : {}
+}
+Perform a flush operation on the cluster to commit transaction log entries to the index.
+# curl -X POST "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_flush" -u <USERNAME> -k
+{
+"_shards" : {
+"total" : 19,
+"successful" : 19,
+"failed" : 0
+}
+}
+Run the following command on the Wazuh manager node(s) if running a single-node Wazuh indexer cluster.
+SystemdSysV init# systemctl stop wazuh-manager
+# service wazuh-manager stop
+Upgrading the Wazuh indexer nodes
+Perform the following steps on each Wazuh indexer node to upgrade them. Upgrade nodes with the cluster_manager role last to maintain cluster connectivity among online nodes.
+Note
+You can check the role of Wazuh indexer nodes in the cluster using the following command:
+# curl -k -u <USERNAME> https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cat/nodes?v
+Stop the Wazuh indexer service.
+SystemdSysV init# systemctl stop wazuh-indexer
+# service wazuh-indexer stop
+Backup the /etc/wazuh-indexer/jvm.options file to preserve your custom JVM settings. For example, create a copy of the file using the following command:
+# cp /etc/wazuh-indexer/jvm.options /etc/wazuh-indexer/jvm.options.old
+Upgrade the Wazuh indexer to the latest version.
+YumAPT# yum upgrade wazuh-indexer
+# apt-get install wazuh-indexer
+Note
+When prompted, choose to replace the /etc/wazuh-indexer/jvm.options file with the updated version.
+Manually reapply any custom settings to the /etc/wazuh-indexer/jvm.options file from your backup file.
+Restart the Wazuh indexer service.
+SystemdSysV init# systemctl daemon-reload
+# systemctl enable wazuh-indexer
+# systemctl start wazuh-indexer
+Choose one option according to the operating system used.
+RPM-based operating system:
+# chkconfig --add wazuh-indexer
+# service wazuh-indexer start
+Debian-based operating system:
+# update-rc.d wazuh-indexer defaults 95 10
+# service wazuh-indexer start
+Repeat steps 1 to 5 above on all Wazuh indexer nodes before proceeding to the post-upgrade actions.
+Post-upgrade actions
+Perform the following steps on any of the Wazuh indexer nodes replacing <WAZUH_INDEXER_IP_ADDRESS>, <USERNAME>, and <PASSWORD>.
+Check that the newly upgraded Wazuh indexer nodes are in the cluster.
+# curl -k -u <USERNAME> https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cat/nodes?v
+Re-enable shard allocation.
+curl -X PUT "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cluster/settings" -u <USERNAME> -k -H 'Content-Type: application/json' -d'
+{
+"persistent": {
+"cluster.routing.allocation.enable": "all"
+}
+}
+'
+{
+"acknowledged" : true,
+"persistent" : {
+"cluster" : {
+"routing" : {
+"allocation" : {
+"enable" : "all"
+}
+}
+}
+},
+"transient" : {}
+}
+Check the status of the Wazuh indexer cluster again to see if the shard allocation has finished.
+# curl -k -u <USERNAME> https://<WAZUH_INDEXER_IP_ADDRESS>:9200/_cat/nodes?v
+ip         heap.percent ram.percent cpu load_1m load_5m load_15m node.role node.roles                                        cluster_manager name
+172.18.0.3           34          86  32    6.67    5.30     2.53 dimr      cluster_manager,data,ingest,remote_cluster_client -               wazuh2.indexer
+172.18.0.4           21          86  32    6.67    5.30     2.53 dimr      cluster_manager,data,ingest,remote_cluster_client *               wazuh1.indexer
+172.18.0.2           16          86  32    6.67    5.30     2.53 dimr      cluster_manager,data,ingest,remote_cluster_client -               wazuh3.indexer
+Note
+Note that the upgrade process doesn't update plugins installed manually. Outdated plugins might cause the upgrade to fail.
+Run the following command on each Wazuh indexer node to list installed plugins and identify those that require an update:
+# /usr/share/wazuh-indexer/bin/opensearch-plugin list
+In the output, plugins that require an update will be labeled as "outdated".
+Remove the outdated plugins and reinstall the latest version replacing <PLUGIN_NAME> with the name of the plugin:
+# /usr/share/wazuh-indexer/bin/opensearch-plugin remove <PLUGIN_NAME>
+# /usr/share/wazuh-indexer/bin/opensearch-plugin install <PLUGIN_NAME>
+Upgrading the Wazuh server
+When upgrading a multi-node Wazuh manager cluster, run the upgrade in every node. Start with the master node to reduce server downtime. To successfully upgrade the Wazuh server, follow these steps in order:
+Upgrade the Wazuh manager.
+Configure the vulnerability detection. (if required based on the version you are upgrading from).
+Configure Filebeat.
+Note
+Upgrading from Wazuh 4.2.x or lower creates the wazuh operating system user and group to replace ossec. To avoid upgrade conflicts, make sure that the wazuh user and group are not present in your operating system.
+Upgrading the Wazuh manager
+Upgrade the Wazuh manager to the latest version:
+YumAPT# yum upgrade wazuh-manager
+# apt-get install wazuh-manager
+Warning
+If the /var/ossec/etc/ossec.conf configuration file was modified, it will not be replaced by the upgrade. You will therefore have to add the settings of the new capabilities manually. More information can be found in the User manual.
+Run the following command on the Wazuh manager node(s) to start the Wazuh manager service if you stopped it earlier:
+SystemdSysV init# systemctl start wazuh-manager
+# service wazuh-manager start
+Configuring vulnerability detection
+If upgrading from version 4.8.x or later, skip the vulnerability detection configuration and proceed to Configuring Filebeat. No action is needed as the vulnerability detection block is already configured.
+When upgrading from Wazuh version 4.7.x or earlier, follow these steps to configure the vulnerability detection block.
+Update the configuration file
+Edit the /var/ossec/etc/ossec.conf file to include the new <vulnerability-detection> block. Remove the old <vulnerability-detector> block if it exists.
+The updated configuration enables the Wazuh Vulnerability Detection module to index vulnerabilities and alerts, with the vulnerability feed refreshing every 60 minutes. Add the following block to the configuration file:
+<vulnerability-detection>
+<enabled>yes</enabled>
+<index-status>yes</index-status>
+<feed-update-interval>60m</feed-update-interval>
+</vulnerability-detection>
+Configure the indexer block
+Ensure the <indexer> block contains the details of your Wazuh indexer host. During the upgrade, a default <indexer> configuration is added under <ossec_conf> if none exists in /var/ossec/etc/ossec.conf. By default, the configuration includes one host with the IP address 0.0.0.0:
+<indexer>
+<enabled>yes</enabled>
+<hosts>
+<host>https://0.0.0.0:9200</host>
+</hosts>
+<ssl>
+<certificate_authorities>
+<ca>/etc/filebeat/certs/root-ca.pem</ca>
+</certificate_authorities>
+<certificate>/etc/filebeat/certs/filebeat.pem</certificate>
+<key>/etc/filebeat/certs/filebeat-key.pem</key>
+</ssl>
+</indexer>
+Replace 0.0.0.0 with the IP address or hostname of your Wazuh indexer node. You can find this value in the Filebeat configuration file at /etc/filebeat/filebeat.yml. Ensure that the <certificate> and <key> names match the files located in /etc/filebeat/certs/.
+If using a Wazuh indexer cluster, add a <host> entry in the Wazuh manager /var/ossec/etc/ossec.conf file for each node in the cluster. For example, for a two-node configuration:
+<hosts>
+<host>https://10.0.0.1:9200</host>
+<host>https://10.0.0.2:9200</host>
+</hosts>
+The Wazuh server will prioritize reporting to the first indexer node in the list and switch to the next available node if it becomes unavailable.
+Store Wazuh indexer credentials
+Save the Wazuh indexer username and password into the Wazuh manager keystore using the Wazuh-keystore tool:
+# echo '<INDEXER_USERNAME>' | /var/ossec/bin/wazuh-keystore -f indexer -k username
+# echo '<INDEXER_PASSWORD>' | /var/ossec/bin/wazuh-keystore -f indexer -k password
+If you have forgotten your Wazuh indexer password, refer to the password management guide to reset it.
+Configuring Filebeat
+When upgrading Wazuh, you must also update the Wazuh Filebeat module and the alerts template to ensure compatibility with the latest Wazuh indexer version. Follow these steps to configure Filebeat properly:
+Download the Wazuh module for Filebeat:
+# curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.4.tar.gz | sudo tar -xvz -C /usr/share/filebeat/module
+Download the alerts template:
+# curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/wazuh/wazuh/v4.13.1/extensions/elasticsearch/7.x/wazuh-template.json
+# chmod go+r /etc/filebeat/wazuh-template.json
+Restart Filebeat:
+SystemdSysV init# systemctl daemon-reload
+# systemctl enable filebeat
+# systemctl start filebeat
+Choose one option according to the OS used:
+Debian based OS
+# update-rc.d filebeat defaults 95 10
+# service filebeat start
+RPM based OS
+# chkconfig --add filebeat
+# service filebeat start
+Upload the new Wazuh template and pipelines for Filebeat:
+# filebeat setup --pipelines
+# filebeat setup --index-management -E output.logstash.enabled=false
+If you are upgrading from Wazuh versions v4.8.x or v4.9.x, manually update the wazuh-states-vulnerabilities-* mappings using the following command. Replace <WAZUH_INDEXER_IP_ADDRESS>, <USERNAME>, and <PASSWORD> with the values applicable to your deployment.
+Skip this step if upgrading from other versions.
+curl -X PUT "https://<WAZUH_INDEXER_IP_ADDRESS>:9200/wazuh-states-vulnerabilities-*/_mapping"  -u <USERNAME> -k -H 'Content-Type: application/json' -d'
+{
+"properties": {
+"vulnerability": {
+"properties": {
+"under_evaluation": {
+"type": "boolean"
+},
+"scanner": {
+"properties": {
+"source": {
+"type": "keyword",
+"ignore_above": 1024
+}
+}
+}
+}
+}
+}
+}
+'
+Upgrading the Wazuh dashboard
+Backup the /etc/wazuh-dashboard/opensearch_dashboards.yml file to save your settings.  For example, create a copy of the file using the following command:
+# cp /etc/wazuh-dashboard/opensearch_dashboards.yml /etc/wazuh-dashboard/opensearch_dashboards.yml.old
+Upgrade the Wazuh dashboard.
+YumAPT# yum upgrade wazuh-dashboard
+# apt-get install wazuh-dashboard
+Note
+When prompted, choose to replace the /etc/wazuh-dashboard/opensearch_dashboards.yml file with the updated version.
+Manually reapply any configuration changes to the /etc/wazuh-dashboard/opensearch_dashboards.yml file. Ensure that the values of server.ssl.key and server.ssl.certificate match the files located in /etc/wazuh-dashboard/certs/.
+Ensure the value of uiSettings.overrides.defaultRoute in the /etc/wazuh-dashboard/opensearch_dashboards.yml file is set to /app/wz-home as shown below:
+uiSettings.overrides.defaultRoute: /app/wz-home
+Restart the Wazuh dashboard:
+SystemdSysV init# systemctl daemon-reload
+# systemctl enable wazuh-dashboard
+# systemctl start wazuh-dashboard
+Choose one option according to your operating system:
+RPM-based operating system:
+# chkconfig --add wazuh-dashboard
+# service wazuh-dashboard start
+Debian-based operating system:
+# update-rc.d wazuh-dashboard defaults 95 10
+# service wazuh-dashboard start
+You can now access the Wazuh dashboard via:  https://<DASHBOARD_IP_ADDRESS>/app/wz-home.
+Import the saved customizations exported while preparing the upgrade.
+Navigate to Dashboard management > Dashboard Management > Saved objects on the Wazuh dashboard.
+Click Import, add the ndjson file and click Import.
+Note
+Note that the upgrade process doesn't update plugins installed manually. Outdated plugins might cause the upgrade to fail.
+Run the following command on the Wazuh dashboard server to list installed plugins and identify those that require an update:
+# sudo -u wazuh-dashboard /usr/share/wazuh-dashboard/bin/opensearch-dashboards-plugin list
+In the output, plugins that require an update will be labeled as "outdated".
+Remove the outdated plugins and reinstall the latest version replacing <PLUGIN_NAME> with the name of the plugin:
+# sudo -u wazuh-dashboard /usr/share/wazuh-dashboard/bin/opensearch-dashboards-plugin remove <PLUGIN_NAME>
+# sudo -u wazuh-dashboard /usr/share/wazuh-dashboard/bin/opensearch-dashboards-plugin install <PLUGIN_NAME>
+Next steps
+The Wazuh server, indexer, and dashboard are now successfully upgraded. You can verify the versions by running the following commands on the node(s) where the central components are installed:
+YumAPT# yum list installed wazuh-indexer
+# yum list installed wazuh-manager
+# yum list installed wazuh-dashboard
+# apt list --installed wazuh-indexer
+# apt list --installed wazuh-manager
+# apt list --installed wazuh-dashboard
+Next, upgrade the Wazuh agents by following the instructions in Upgrading the Wazuh agent.
+Upgrade guide
+Wazuh agent
+On this page
+Wazuh central components
+Preparing the upgrade
+Upgrading the Wazuh indexer
+Preparing the Wazuh indexer cluster for upgrade
+Upgrading the Wazuh indexer nodes
+Post-upgrade actions
+Upgrading the Wazuh server
+Upgrading the Wazuh manager
+Configuring vulnerability detection
+Configuring Filebeat
+Upgrading the Wazuh dashboard
+Next steps
+Explore
+Overview
+XDR
+SIEM
+Services
+Wazuh Cloud
+Professional support
+Consulting services
+Training courses
+Company
+About us
+Customers
+Partners
+Documentation
+Quickstart
+Getting started
+Installation guide
+Resources
+Blog
+Community
+Legal
+© 2025 Wazuh Inc.
+Contact us
++1 (844) 349 2984
+X
+LinkedIn
+Reddit
+GitHub
+Discord
+Slack
+Mailing list
+Close
