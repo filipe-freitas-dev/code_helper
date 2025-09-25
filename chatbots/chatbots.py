@@ -165,6 +165,32 @@ class OpenAiFunctionTools(Enum):
         }
     }
 
+    google_search_tool = {
+        "name": "google_tool_recursive",
+        "description": "Search Google for a query and return the top results. Only perform a search when the user explicitly says 'pesquise'." ,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query to use in Google",
+                },
+                "num_results": {
+                    "type": "integer",
+                    "description": "Number of results to return",
+                    "default": 3
+                },
+                "depth": {
+                    "type": "integer",
+                    "description": "Depth of recursive search",
+                    "default": 2
+                }
+            },
+            "required": ["query"],
+            "additionalProperties": False
+        }
+    }
+
 class AnthropicFunctionTools(Enum):
     get_url_function_tool = {
         "name": "get_url_content",

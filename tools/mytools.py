@@ -6,15 +6,11 @@ from dotenv import load_dotenv
 import os
 import time
 
-load_dotenv()
-
-API_KEY = os.getenv("GOOGLE_API_KEY")
-CX = os.getenv("GOOGLE_CSE_ID")
 visited = set()
 
 def get_url_content(url: str) -> str:
     last_err: Exception | None = None
-    for attempt in range(3):
+    for _ in range(3):
         try:
             resp = requests.get(
                 url,
@@ -41,6 +37,15 @@ def get_url_content(url: str) -> str:
 
 
 def google_search(query, num_results=3):
+    load_dotenv()
+    API_KEY = os.getenv("GOOGLE_API_KEY")
+    CX = os.getenv("GOOGLE_CSE_ID")
+
+    # Validate required credentials early for clearer errors
+    if not API_KEY or not CX:
+        raise ValueError("Missing Google API credentials: set GOOGLE_API_KEY and GOOGLE_CSE_ID")
+
+
     url = "https://www.googleapis.com/customsearch/v1"
     params = {"key": API_KEY, "cx": CX, "q": query, "num": num_results}
     resp = requests.get(url, params=params)
@@ -80,8 +85,11 @@ def crawl_links_recursively(urls, depth=2, max_results=2):
             print(f"Erro em {u}: {e}")
     return all_links
 
-def google_tool_recursive(query, depth=2):
-    results = google_search(query, num_results=3)
+def google_tool_recursive(query,num_results=3, depth=2):
+    # Reset visited set per call to avoid leaking state across invocations
+    global visited
+    visited.clear()
+    results = google_search(query, num_results=num_results)
     urls = [r["link"] for r in results]
     all_data = crawl_links_recursively(urls, depth=depth)
     return all_data
@@ -126,6 +134,39 @@ def handle_tool_call(message: ChoiceDelta) -> tuple[dict, str]:
                     payload = {"url": url, "content": content}
                 except Exception as e:
                     payload = {"error": f"Failed to fetch URL: {e}", "url": url}
+        
+        case "google_tool_recursive":
+            query = arguments.get("query") if isinstance(arguments, dict) else None
+            # Sanitize and validate num_results and depth
+            if isinstance(arguments, dict):
+                raw_num_results = arguments.get("num_results", 3)
+                raw_depth = arguments.get("depth", 2)
+            else:
+                raw_num_results = 3
+                raw_depth = 2
+
+            try:
+                num_results = int(raw_num_results)
+            except Exception:
+                num_results = 3
+            if num_results <= 0:
+                num_results = 3
+
+            try:
+                depth = int(raw_depth)
+            except Exception:
+                depth = 2
+            if depth <= 0:
+                depth = 2
+            if not query or not isinstance(query, str):
+                payload = {"error": "Missing or invalid 'query' parameter"}
+            else:
+                try:
+                    results = google_tool_recursive(query, num_results=num_results, depth=depth)
+                    payload = {"query": query, "results": results}
+                except Exception as e:
+                    payload = {"error": f"Failed to perform Google search: {e}", "query": query}
+        
         case _:
             payload = {"error": f"Unknown tool: {function_name}"}
 
