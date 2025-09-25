@@ -8,8 +8,10 @@ from anthropic.types import MessageParam
 from openai.types.chat import ChatCompletionMessageParam
 from abc import ABC, abstractmethod
 from tools import handle_tool_call
-class ApiKeyError(Exception):...
 from enum import Enum
+
+
+class ApiKeyError(Exception):...
 
 class ChatBot(ABC):
     def __init__(self, system_prompt: str, context: str | None = None) -> None:
@@ -167,7 +169,7 @@ class OpenAiFunctionTools(Enum):
 
     google_search_tool = {
         "name": "google_tool_recursive",
-        "description": "Search Google for a query and return the top results. Only perform a search when the user explicitly says 'pesquise'." ,
+        "description": "Use this tool to search Google only when the user explicitly says 'pesquise'. Perform the search to gather information that supports and informs your answer. Do not use it for other purposes.",
         "parameters": {
             "type": "object",
             "properties": {
