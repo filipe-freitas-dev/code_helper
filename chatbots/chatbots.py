@@ -47,31 +47,64 @@ class OpenAiChatBot(ChatBot):
             self.context_loaded = True
 
         history_list = list(history)
-        messages: list[ChatCompletionMessageParam] = [{"role": "system", "content": self.system_prompt}]
+        messages: list[ChatCompletionMessageParam] = [
+            {"role": "system", "content": self.system_prompt}
+        ]
         messages.extend(history_list)
         messages.append({"role": "user", "content": message})
+        try:
+            first = self.model.chat.completions.create(
+                model="gpt-5-nano",
+                messages=messages,
+                stream=False,
+                tools=define_tools()
+            )
+        except Exception as e:
+            yield f"Error calling model: {e}"
+            return
 
-        stream = self.model.chat.completions.create(
-            model="gpt-5-nano",
-            messages=messages,
-            stream=True,
-            tools=define_tools()
-        )
-        
+        if not first.choices:
+            yield "Model returned no choices."
+            return
+
+        first_msg = first.choices[0].message
+
+       
+        if getattr(first_msg, "tool_calls", None):
+            messages.append(cast(ChatCompletionMessageParam, {
+                "role": "assistant",
+                "content": first_msg.content,
+                "tool_calls": first_msg.tool_calls,
+            }))
+
+            try:
+                tool_response, _ = handle_tool_call(first_msg)  
+            except Exception as e:
+                tool_response = {
+                    "role": "tool",
+                    "tool_call_id": "",
+                    "content": f"{{\"error\": \"Tool execution failed: {e}\"}}"
+                }
+
+            messages.append(cast(ChatCompletionMessageParam, tool_response))
+
+        try:
+            stream = self.model.chat.completions.create(
+                model="gpt-5-nano",
+                messages=messages,
+                stream=True
+            )
+        except Exception as e:
+            yield f"Error calling model for streaming response: {e}"
+            return
 
         response = ""
         for chunk in stream:
-            if chunk.choices[0].finish_reason == "tool_calls":
-                msg = chunk.choices[0].delta
-                res, _ = handle_tool_call(msg)
-                messages.append(cast(ChatCompletionMessageParam, msg))
-                messages.append(cast(ChatCompletionMessageParam, res))
-                stream = self.model.chat.completions.create(model="gpt-5-nano",messages=messages, stream=True)
-                for chunk in stream:
-                    response += chunk.choices[0].delta.content or ""
-                    yield response
-            
-            response += chunk.choices[0].delta.content or ""
+            try:
+                delta = chunk.choices[0].delta
+                response += (getattr(delta, "content", None) or "")
+            except Exception:
+                continue
             yield response
 
 
@@ -95,7 +128,7 @@ class AnthropicChatBot(ChatBot):
             message = context_with_label + message
             self.context_loaded = True
 
-        messages: Iterable[MessageParam] = [{"role": msg["role"], "content": msg["content"]} for msg in history]
+        messages: list[MessageParam] = [{"role": msg["role"], "content": msg["content"]} for msg in history]
         messages.append({"role": "user", "content": message})
 
         result = self.model.messages.stream(
@@ -104,7 +137,9 @@ class AnthropicChatBot(ChatBot):
             temperature=0.7,
             system=self.system_prompt,
             messages=messages,
+            tools=define_tools("anthropic")
         )
+
 
         with result as stream:
             new_text = ""
@@ -113,7 +148,7 @@ class AnthropicChatBot(ChatBot):
                 yield new_text
     
 
-class FunctionTools(Enum):
+class OpenAiFunctionTools(Enum):
     get_url_function_tool = {
         "name": "get_url_content",
         "description": "Find the content about of urls that the user gives. Call this whenever you need to know some content about some url.",
@@ -130,5 +165,24 @@ class FunctionTools(Enum):
         }
     }
 
-def define_tools() -> list:
-    return [{"type":"function","function":function.value} for function in FunctionTools]
+class AnthropicFunctionTools(Enum):
+    get_url_function_tool = {
+        "name": "get_url_content",
+        "description": "Extract text content from a given URL",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "The URL to extract content from"
+                }
+            },
+            "required": ["url"]
+        }
+    }
+
+def define_tools(model: str = "o") -> list:
+    if model.lower().startswith("a"):
+        return [{"type":"function","function": function.value} for function in AnthropicFunctionTools]
+
+    return [{"type":"function","function": function.value} for function in OpenAiFunctionTools]
