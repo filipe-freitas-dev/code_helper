@@ -2,13 +2,14 @@ import os
 import anthropic
 from openai import OpenAI
 import gradio as gr
-from typing import Iterable, Generator
+from typing import Iterable, Generator, cast
 from dotenv import load_dotenv
 from anthropic.types import MessageParam
 from openai.types.chat import ChatCompletionMessageParam
 from abc import ABC, abstractmethod
-
+from tools import handle_tool_call
 class ApiKeyError(Exception):...
+from enum import Enum
 
 class ChatBot(ABC):
     def __init__(self, system_prompt: str, context: str | None = None) -> None:
@@ -54,10 +55,22 @@ class OpenAiChatBot(ChatBot):
             model="gpt-5-nano",
             messages=messages,
             stream=True,
+            tools=define_tools()
         )
+        
 
         response = ""
         for chunk in stream:
+            if chunk.choices[0].finish_reason == "tool_calls":
+                msg = chunk.choices[0].delta
+                res, _ = handle_tool_call(msg)
+                messages.append(cast(ChatCompletionMessageParam, msg))
+                messages.append(cast(ChatCompletionMessageParam, res))
+                stream = self.model.chat.completions.create(model="gpt-5-nano",messages=messages, stream=True)
+                for chunk in stream:
+                    response += chunk.choices[0].delta.content or ""
+                    yield response
+            
             response += chunk.choices[0].delta.content or ""
             yield response
 
@@ -99,3 +112,23 @@ class AnthropicChatBot(ChatBot):
                 new_text += text
                 yield new_text
     
+
+class FunctionTools(Enum):
+    get_url_function_tool = {
+        "name": "get_url_content",
+        "description": "Find the content about of urls that the user gives. Call this whenever you need to know some content about some url.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "The url that the user wants to know something about",
+                },
+            },
+            "required": ["url"],
+            "additionalProperties": False
+        }
+    }
+
+def define_tools() -> list:
+    return [{"type":"function","function":function.value} for function in FunctionTools]
