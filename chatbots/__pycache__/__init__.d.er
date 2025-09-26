@@ -1,0 +1,3 @@
+##[pylyzer] succeed /home/filipefreitas/code_helper/chatbots/__init__.py 1758821680 23
+.DUMMY = pyimport "chatbots"
+.chatbots = pyimport "chatbots"

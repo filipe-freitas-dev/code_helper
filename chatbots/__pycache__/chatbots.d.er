@@ -1,0 +1,63 @@
+##[pylyzer] failed /home/filipefreitas/code_helper/chatbots/chatbots.py 1758911666 7487
+.os: Never
+
+.anthropic: Never
+
+.___v_desugar_1: Never
+.OpenAI: Never
+.gr: Never
+
+.___v_desugar_2: Never
+.Iterable: Never
+.Generator: Never
+.cast: Never
+.___v_desugar_3: Never
+.load_dotenv: Never
+.___v_desugar_4: Never
+.MessageParam: Never
+.___v_desugar_5: Never
+.ChatCompletionMessageParam: Never
+.___v_desugar_6: Never
+.ABC: Never
+.abstractmethod: Never
+.___v_desugar_7: Never
+.handle_tool_call: Never
+.___v_desugar_8: Never
+.Enum: Never
+.ApiKeyError: ClassType
+.ApiKeyError <: global::Exception
+
+.ChatBot: ClassType
+.ChatBot <: Never
+.ChatBot.system_prompt: Str
+.ChatBot.context: NoneType or Str
+.ChatBot.context_loaded: Never
+.ChatBot.__call__: (system_prompt: Str, context: NoneType or Str := NoneType or Str) -> chatbots.ChatBot
+.ChatBot.chat: (self: chatbots.ChatBot, message: Str, history: global::Iterable(Obj)) -> global::Generator(Obj)
+.ChatBot.run: (self: chatbots.ChatBot) -> NoneType
+
+.OpenAiChatBot: ClassType
+chatbots = pyimport "chatbots"
+.OpenAiChatBot <: .ChatBot
+.OpenAiChatBot.model: Never
+.OpenAiChatBot.__call__: (system_prompt: Str := Str, context: NoneType or Str := NoneType or Str) -> chatbots.OpenAiChatBot
+.OpenAiChatBot.std_system_prompt: {"You are a helpful assistant. If you don\'t know the answer, say so. Don\'t try to make up an answer if you don\'t know. Make questions to the user to try to help more your accuracy."}
+.OpenAiChatBot.chat: Never
+
+.AnthropicChatBot: ClassType
+.AnthropicChatBot <: .ChatBot
+.AnthropicChatBot.model: Never
+.AnthropicChatBot.__call__: (system_prompt: Str := Str, context: NoneType or Str := NoneType or Str) -> chatbots.AnthropicChatBot
+.AnthropicChatBot.std_system_prompt: {"You are a helpful assistant. If you don\'t know the answer, say so. Don\'t try to make up an answer if you don\'t know. Make questions to the user to try to help more your accuracy."}
+.AnthropicChatBot.chat: Never
+
+.OpenAiFunctionTools: ClassType
+.OpenAiFunctionTools <: Never
+.OpenAiFunctionTools.get_url_function_tool: global::Dict!({{"description"}: {"Find the content about of urls that the user gives. Call this whenever you need to know some content about some url."}, {"name"}: {"get_url_content"}, {"parameters"}: global::Dict!({{"required"}: global::List!({"url"}, 1), {"additionalProperties"}: {False}, {"type"}: {"object"}, {"properties"}: global::Dict!({{"url"}: global::Dict!({{"description"}: {"The url that the user wants to know something about"}, {"type"}: {"string"}})})})})
+.OpenAiFunctionTools.google_search_tool: global::Dict!({{"description"}: {"Use this tool to search Google only when the user explicitly says \'pesquise\'. Perform the search to gather information that supports and informs your answer. Do not use it for other purposes."}, {"name"}: {"google_tool_recursive"}, {"parameters"}: global::Dict!({{"required"}: global::List!({"query"}, 1), {"additionalProperties"}: {False}, {"type"}: {"object"}, {"properties"}: global::Dict!({{"num_results"}: global::Dict!({{"description"}: {"Number of results to return"}, {"type"}: {"integer"}, {"default"}: {3}}), {"query"}: global::Dict!({{"description"}: {"The search query to use in Google"}, {"type"}: {"string"}}), {"depth"}: global::Dict!({{"description"}: {"Depth of recursive search"}, {"type"}: {"integer"}, {"default"}: {2}})})})})
+
+.AnthropicFunctionTools: ClassType
+.AnthropicFunctionTools <: Never
+.AnthropicFunctionTools.get_url_function_tool: global::Dict!({{"description"}: {"Extract text content from a given URL"}, {"input_schema"}: global::Dict!({{"required"}: global::List!({"url"}, 1), {"type"}: {"object"}, {"properties"}: global::Dict!({{"url"}: global::Dict!({{"description"}: {"The URL to extract content from"}, {"type"}: {"string"}})})}), {"name"}: {"get_url_content"}})
+
+.define_tools: (model: Str := Str and Str) -> global::GenericList
